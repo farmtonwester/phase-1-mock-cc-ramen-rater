@@ -26,11 +26,11 @@ function renderRamens(ramen) {
 
 //build out callback function to append ramenImg to #ramen-detail, takes the ramen object that was clicked as argument
 function moveToDetails(ramen) { 
-    const ramenName = document.getElementsByClassName('name')
+    const ramenName = document.querySelector('.name')
     ramenName.textContent = ramen.name
-    const ramenImage = document.getElementsByClassName('detail-image')
+    const ramenImage = document.querySelector('.detail-image')
     ramenImage.src = ramen.image
-    const ramenRestaurant = document.getElementsByClassName('restaurant')
+    const ramenRestaurant = document.querySelector('.restaurant')
     ramenRestaurant.textContent = ramen.restaurant
-
+    console.log(ramen)
 }
