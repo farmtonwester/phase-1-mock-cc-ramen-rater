@@ -47,7 +47,14 @@ newRamenForm.addEventListener('submit', handleNewRamenSubmission)
 
 function handleNewRamenSubmission(event) {
     event.preventDefault();
-    console.log(event);
+    //console.log(event);
+    
+    const newRamenName = event.target.name.value
+    const newRamenRestaurant = event.target.restaurant.value
+    const newRamenImage = event.target.image.value
+    const newRamenRating = event.target.rating.value
+    const newRamenComment = event.target['new-comment'].value
+    
     const newRamenObj = {
         name: newRamenName,
         restaurant: newRamenRestaurant,
@@ -55,14 +62,8 @@ function handleNewRamenSubmission(event) {
         rating: newRamenRating,
         comment: newRamenComment
     }
-
-    const newRamenName = event.target.name.value
-    const newRamenRestaurant = event.target.restaurant.value
-    const newRamenImage = event.target.image.value
-    const newRamenRating = event.target.rating.value
-    const newRamenComment = event.target.new-comment.value
-
     
     renderRamens(newRamenObj)
-
+    
+    event.target.reset()
 }
