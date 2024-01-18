@@ -39,3 +39,30 @@ function moveToDetails(ramen) {
     commentDisplay.textContent = ramen.comment 
 }
 
+//Next goal is to render new ramen after submitting the new-ramen form
+
+//how do i grab info from the form submission and make that a new ramenObj, which i can pass to renderRamens
+const newRamenForm = document.getElementById('new-ramen')
+newRamenForm.addEventListener('submit', handleNewRamenSubmission)
+
+function handleNewRamenSubmission(event) {
+    event.preventDefault();
+    console.log(event);
+    const newRamenObj = {
+        name: newRamenName,
+        restaurant: newRamenRestaurant,
+        image: newRamenImage,
+        rating: newRamenRating,
+        comment: newRamenComment
+    }
+
+    const newRamenName = event.target.name.value
+    const newRamenRestaurant = event.target.restaurant.value
+    const newRamenImage = event.target.image.value
+    const newRamenRating = event.target.rating.value
+    const newRamenComment = event.target.new-comment.value
+
+    
+    renderRamens(newRamenObj)
+
+}
