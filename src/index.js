@@ -32,5 +32,10 @@ function moveToDetails(ramen) {
     ramenImage.src = ramen.image
     const ramenRestaurant = document.querySelector('.restaurant')
     ramenRestaurant.textContent = ramen.restaurant
-    console.log(ramen)
+    //console.log(ramen)
+    const ratingDisplay = document.querySelector("#rating-display")
+    const commentDisplay = document.querySelector('#comment-display')
+    ratingDisplay.textContent = ramen.rating
+    commentDisplay.textContent = ramen.comment 
 }
+
